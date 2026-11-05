@@ -14,7 +14,9 @@ DATA_DIR = os.path.join(BASE_DIR, 'data')
 def load_json_file(filename):
     """Load data from a JSON file in the data directory"""
     filepath = os.path.join(DATA_DIR, filename)
-    with open(filepath, 'r') as f:
+    # Explicit UTF-8: without it Windows decodes with cp1252, turning
+    # characters like "±" into mojibake ("Â±").
+    with open(filepath, 'r', encoding='utf-8') as f:
         return json.load(f)
 
 # Load all datasets from JSON files
