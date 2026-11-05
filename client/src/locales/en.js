@@ -6,6 +6,7 @@ export default {
     orders: 'Orders',
     finance: 'Finance',
     demandForecast: 'Demand Forecast',
+    restocking: 'Restocking',
     companyName: 'Catalyst Components',
     subtitle: 'Inventory Management System'
   },
@@ -55,7 +56,9 @@ export default {
       daysDelayed: 'Days Delayed',
       priority: 'Priority',
       unitsShort: 'units short',
-      days: 'days'
+      days: 'days',
+      createPO: 'Create PO',
+      viewPO: 'View PO'
     },
     topProducts: {
       title: 'Top Products by Revenue',
@@ -112,6 +115,22 @@ export default {
     onTimeDelivery: 'On-Time Delivery',
     itemsCount: '{count} items',
     quantity: 'Qty',
+    submittedOrders: {
+      title: 'Submitted Orders',
+      empty: 'No restocking orders have been submitted yet.',
+      loadError: 'Failed to load submitted orders',
+      leadTimeDays: '{days} days',
+      status: 'Submitted',
+      columns: {
+        orderNumber: 'Order Number',
+        items: 'Items',
+        totalCost: 'Total Cost',
+        submittedDate: 'Submitted',
+        leadTime: 'Lead Time',
+        expectedDelivery: 'Expected Delivery',
+        status: 'Status'
+      }
+    },
     table: {
       orderNumber: 'Order Number',
       orderId: 'Order ID',
@@ -185,6 +204,39 @@ export default {
       change: 'Change',
       trend: 'Trend',
       period: 'Period'
+    }
+  },
+
+  // Restocking
+  restocking: {
+    title: 'Restocking',
+    description: 'Allocate a budget to restock items with the largest forecasted demand gaps',
+    loadError: 'Failed to load demand forecasts',
+    budget: 'Budget',
+    budgetLabel: 'Restocking Budget',
+    budgetHint: 'Items with increasing demand are prioritized, then by largest demand gap.',
+    allocated: 'Allocated',
+    remaining: 'Remaining',
+    itemCount: 'Items',
+    longestLeadTime: 'Longest Lead Time',
+    days: '{days} days',
+    recommendations: 'Recommended Restock',
+    empty: 'No items fit within the current budget.',
+    noCandidates: 'All forecasted demand is currently covered. Nothing to restock.',
+    placeOrder: 'Place Order',
+    submitting: 'Submitting...',
+    successMessage: 'Order {orderNumber} submitted successfully.',
+    viewOrders: 'View in Orders',
+    submitError: 'Failed to submit order',
+    table: {
+      sku: 'SKU',
+      itemName: 'Item Name',
+      trend: 'Trend',
+      gap: 'Demand Gap',
+      recommendedQty: 'Recommended Qty',
+      unitCost: 'Unit Cost',
+      lineTotal: 'Line Total',
+      leadTime: 'Lead Time'
     }
   },
 
@@ -309,6 +361,44 @@ export default {
     english: 'English',
     japanese: 'Japanese',
     selectLanguage: 'Select Language'
+  },
+
+  // Purchase Order Modal
+  purchaseOrder: {
+    createTitle: 'Create Purchase Order',
+    viewTitle: 'Purchase Order Details',
+    backlogContext: 'Backlog Item',
+    sku: 'SKU',
+    itemName: 'Item Name',
+    shortage: 'Shortage',
+    units: 'units',
+    supplierName: 'Supplier Name',
+    supplierPlaceholder: 'Enter supplier name',
+    quantity: 'Quantity',
+    unitCost: 'Unit Cost (USD)',
+    expectedDelivery: 'Expected Delivery Date',
+    notes: 'Notes',
+    notesPlaceholder: 'Optional notes for the supplier',
+    total: 'Total Cost',
+    status: 'Status',
+    createdDate: 'Created Date',
+    poId: 'PO ID',
+    noNotes: 'No notes',
+    required: 'Required',
+    submit: 'Create Purchase Order',
+    submitting: 'Creating...',
+    loading: 'Loading purchase order...',
+    loadError: 'Failed to load purchase order',
+    createError: 'Failed to create purchase order',
+    notFound: 'No purchase order found for this item',
+    alreadyExists: 'A purchase order already exists for this item',
+    statuses: {
+      pending: 'Pending',
+      ordered: 'Ordered',
+      shipped: 'Shipped',
+      received: 'Received',
+      cancelled: 'Cancelled'
+    }
   },
 
   // Common

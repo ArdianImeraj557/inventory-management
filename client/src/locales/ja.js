@@ -6,6 +6,7 @@ export default {
     orders: '注文',
     finance: '財務',
     demandForecast: '需要予測',
+    restocking: '補充発注',
     companyName: '触媒コンポーネンツ',
     subtitle: '在庫管理システム'
   },
@@ -55,7 +56,9 @@ export default {
       daysDelayed: '遅延日数',
       priority: '優先度',
       unitsShort: '単位不足',
-      days: '日'
+      days: '日',
+      createPO: '発注書作成',
+      viewPO: '発注書表示'
     },
     topProducts: {
       title: '収益別トップ製品',
@@ -112,6 +115,22 @@ export default {
     onTimeDelivery: '定時配達',
     itemsCount: '{count}件',
     quantity: '数量',
+    submittedOrders: {
+      title: '送信済み補充注文',
+      empty: '送信済みの補充注文はまだありません。',
+      loadError: '送信済み注文の読み込みに失敗しました',
+      leadTimeDays: '{days}日',
+      status: '送信済み',
+      columns: {
+        orderNumber: '注文番号',
+        items: '品目',
+        totalCost: '合計費用',
+        submittedDate: '送信日',
+        leadTime: 'リードタイム',
+        expectedDelivery: '納品予定日',
+        status: 'ステータス'
+      }
+    },
     table: {
       orderNumber: '注文番号',
       orderId: '注文ID',
@@ -207,6 +226,39 @@ export default {
     inStock: '在庫あり',
     lowStock: '在庫僅少',
     adequate: '適量'
+  },
+
+  // Restocking
+  restocking: {
+    title: '補充発注',
+    description: '予算を割り当て、予測需要との差が大きい品目を補充します',
+    loadError: '需要予測の読み込みに失敗しました',
+    budget: '予算',
+    budgetLabel: '補充予算',
+    budgetHint: '需要が増加している品目を優先し、次に需要ギャップの大きい順に割り当てます。',
+    allocated: '割当額',
+    remaining: '残額',
+    itemCount: '品目数',
+    longestLeadTime: '最長リードタイム',
+    days: '{days}日',
+    recommendations: '推奨補充品目',
+    empty: '現在の予算内に収まる品目はありません。',
+    noCandidates: '予測需要はすべて充足されています。補充の必要はありません。',
+    placeOrder: '発注する',
+    submitting: '送信中...',
+    successMessage: '注文 {orderNumber} を送信しました。',
+    viewOrders: '注文画面で表示',
+    submitError: '注文の送信に失敗しました',
+    table: {
+      sku: 'SKU',
+      itemName: '品目名',
+      trend: 'トレンド',
+      gap: '需要ギャップ',
+      recommendedQty: '推奨数量',
+      unitCost: '単価',
+      lineTotal: '小計',
+      leadTime: 'リードタイム'
+    }
   },
 
   // Trends
@@ -309,6 +361,44 @@ export default {
     english: 'English',
     japanese: '日本語',
     selectLanguage: '言語を選択'
+  },
+
+  // Purchase Order Modal
+  purchaseOrder: {
+    createTitle: '発注書の作成',
+    viewTitle: '発注書の詳細',
+    backlogContext: 'バックログ品目',
+    sku: 'SKU',
+    itemName: '品目名',
+    shortage: '不足',
+    units: '個',
+    supplierName: '仕入先名',
+    supplierPlaceholder: '仕入先名を入力',
+    quantity: '数量',
+    unitCost: '単価 (USD)',
+    expectedDelivery: '納品予定日',
+    notes: '備考',
+    notesPlaceholder: '仕入先への備考（任意）',
+    total: '合計金額',
+    status: 'ステータス',
+    createdDate: '作成日',
+    poId: '発注書ID',
+    noNotes: '備考なし',
+    required: '必須',
+    submit: '発注書を作成',
+    submitting: '作成中...',
+    loading: '発注書を読み込み中...',
+    loadError: '発注書の読み込みに失敗しました',
+    createError: '発注書の作成に失敗しました',
+    notFound: 'この品目の発注書が見つかりません',
+    alreadyExists: 'この品目の発注書は既に存在します',
+    statuses: {
+      pending: '保留中',
+      ordered: '発注済み',
+      shipped: '出荷済み',
+      received: '受領済み',
+      cancelled: 'キャンセル'
+    }
   },
 
   // Common
